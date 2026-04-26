@@ -1,7 +1,24 @@
 # Climate Challenge Week 0
 
-## Overview
-This project analyzes historical climate data from five African countries (Ethiopia, Kenya, Sudan, Tanzania, and Nigeria) to identify climate trends, seasonal patterns, and anomalies. The analysis supports Ethiopia's preparation for hosting COP32 in Addis Ababa (2027) by providing evidence-backed insights for climate policy negotiations.
+# Climate Challenge Week 0
+
+## Project Overview
+
+Analyzes historical climate data (2015–2026) from Ethiopia, Kenya, Sudan, Tanzania, and Nigeria using NASA POWER satellite data. Provides evidence-backed insights for Ethiopia's COP32 climate negotiations.
+
+**Key Analysis:**
+- Temperature trends and warming patterns
+- Rainfall variability and extreme events
+- Cross-country climate vulnerability comparison
+
+---
+
+## Quick Setup
+
+### 1. Clone repository
+```bash
+git clone https://github.com/hawi088/climate-challenge-week0.git
+cd climate-challenge-week0
 
 ## Setup Instructions
 
@@ -28,3 +45,5 @@ venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+
+---
