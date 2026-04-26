@@ -30,6 +30,10 @@ GitHub Actions workflow runs:
 ```bash
 pip install -r requirements.txt
 ```
+
+---
+
+
 ## Task 2: Data profiling, cleaning and EDA
 
 ### 1. Data Loading & Date Parsing
@@ -49,14 +53,14 @@ df['Date'] = pd.to_datetime(df['YEAR'] * 1000 + df['DOY'], format='%Y%j')
 # Extract month and year
 df['Month'] = df['Date'].dt.month
 df['Year'] = df['Date'].dt.year
-
+```
 ### 2. Missing Value Handling
 
 - There was no -999 data value in the given dataset
 - No dupliates were found
 ```python
 df.duplicated().sum()
-
+```
 ### 3. Data Quality Assessment
 
 After cleaning:
@@ -104,7 +108,7 @@ Used:
 
 ```python
 df.describe()
-
+```
 ### 6. Time Series Analysis
 
 | Plot Type | Purpose | Key Finding |
@@ -153,3 +157,45 @@ df.describe()
 - Identifies compound risks:
   - Hot + dry → drought  
   - Warm + humid → flood risk  
+
+### 10. Cleaned Data Export
+
+```python
+df.to_csv('../data/<country>_clean.csv')
+```
+
+## Tools & Libraries Used
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+```
+## Challenges Encountered & Solutions
+
+| Challenge | Solution |
+|----------|--------|
+| Git merge conflicts | Used `git checkout --theirs` and force checkout method |
+| No -999 values found | Standard missing value handling applied |
+| Skewed rainfall distribution | Applied log scale for histogram visualization |
+| Diverged branches | Used `git push --force` after verification |
+
+---
+
+## Key Findings Summary
+
+| Country | Temperature Trend | Rainfall Peak | Key Risk |
+|--------|------------------|--------------|----------|
+| Ethiopia | Warming | 446.6 mm | Humid heatwaves + floods |
+| Kenya | Warming | 213.9 mm | Bimodal rainfall variability |
+| Sudan | Stable/Warming | 206.0 mm | Extreme heat + flash floods |
+| Tanzania | Warming | Data pending | Annual aggregation needed |
+| Nigeria | Slight warming | Data pending | Annual aggregation needed |
+
+## References
+
+- NASA POWER Climate Data  
+- WMO State of the Climate in Africa (2024)  
+- World Bank Climate Risk Country Profiles  
